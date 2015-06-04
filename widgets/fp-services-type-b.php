@@ -134,7 +134,7 @@ class Sydney_Services_Type_B extends WP_Widget {
 					<?php while ( $services->have_posts() ) : $services->the_post(); ?>
 						<?php $icon = get_post_meta( get_the_ID(), 'wpcf-service-icon', true ); ?>
 						<?php $link = get_post_meta( get_the_ID(), 'wpcf-service-link', true ); ?>
-						<div class="service <?php echo $cols_no; ?>">
+						<div class="service clearfix <?php echo $cols_no; ?>">
 							<div class="list-item">
 								<?php if ($icon) : ?>			
 									<div class="icon">

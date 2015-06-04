@@ -1,5 +1,16 @@
 Changelog
 
+
+29 May 2015 - 1.08
+--------------------------------------
+- added antispambot protection for the contact widget;
+- added IE9 fix;
+- added new option for the Page Builder;
+- new slider options;
+- mobile menu adjustments;
+- fixed services overflow issue.
+
+
 20 May 2015 - 1.07
 --------------------------------------
 - fixed employees carousel for larger screens;

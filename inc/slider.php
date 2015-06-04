@@ -11,8 +11,15 @@ function sydney_slider_template() {
 
 	if ( (get_theme_mod('front_header_type','slider') == 'slider' && is_front_page()) || (get_theme_mod('site_header_type') == 'slider' && !is_front_page()) ) {
 
-    //Get the slider speed
-    $speed = get_theme_mod('slider_speed', '4000');
+    //Get the slider options
+    $speed      = get_theme_mod('slider_speed', '4000');
+    $text_speed = get_theme_mod('textslider_speed', '4000');
+    $text_slide = get_theme_mod('textslider_slide', 0);
+    if (!$text_slide) {
+        $slide_toggle = true;
+    } else {
+        $slide_toggle = false;
+    }
 	?>
 
 	<div id="slideshow" class="header-slider" data-speed="<?php echo esc_attr($speed); ?>">
@@ -38,7 +45,7 @@ function sydney_slider_template() {
 	    </div>
 
         <div class="text-slider-section">
-            <div class="text-slider">
+            <div class="text-slider" data-speed="<?php echo esc_attr($text_speed); ?>" data-slideshow="<?php echo esc_attr($slide_toggle); ?>">
                 <ul class="slide-text slides">
                 	<?php if ( get_theme_mod('slider_image_1', get_template_directory_uri() . '/images/1.png') ) : ?>
                     <li>

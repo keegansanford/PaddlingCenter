@@ -44,9 +44,9 @@
 					selector: ".slide-text li",
 					controlNav: false,
 					directionNav: false,
-					slideshowSpeed: 4000,
+					slideshowSpeed: $('.text-slider').data('speed'),
 					animationSpeed : 700,
-					slideshow : true,
+					slideshow : $('.text-slider').data('slideshow'),
 					touch: true,
 					useCSS: false,
 				});
@@ -75,7 +75,7 @@
 		$(window).on('load resize', function() {
 			var currMenuType = 'desktop';
 
-			if ( matchMedia( 'only screen and (max-width: 991px)' ).matches ) {
+			if ( matchMedia( 'only screen and (max-width: 1024px)' ).matches ) {
 				currMenuType = 'mobile';
 			}
 

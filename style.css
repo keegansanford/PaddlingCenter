@@ -4,7 +4,7 @@ Theme URI: http://athemes.com/theme/sydney
 Author: aThemes
 Author URI: http://athemes.com
 Description: Sydney is a powerful business theme that provides a fast way for companies or freelancers to create an awesome online presence. Sydney brings plenty of customization possibilities like access to all Google Fonts, full color control, layout control, logo upload, full screen slider, header image, sticky navigation and much more. Also, Sydney provides all the construction blocks you need to rapidly create an engaging front page.
-Version: 1.07
+Version: 1.08
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: sydney
@@ -136,6 +136,12 @@ Navigation
 	float: right;
 	text-align: right;
 	width: 50%;
+}
+.posts-navigation .nav-previous {
+	padding-left: 15px;
+}
+.posts-navigation .nav-next {
+	padding-right: 15px;
 }
 /*--------------------------------------------------------------
 Accessibility
@@ -576,7 +582,8 @@ Header
 		color: #fff;
 	}
 	.site-logo {
-		max-height: 100px;
+		max-height: 75px;
+		padding-bottom: 4%;
 	}
 	.site-header {
 		position: absolute;
@@ -1766,7 +1773,11 @@ Panels
 	}
 	.panel-grid .overlay {
 		z-index: -1;
-	}	
+	}
+	.no-col-padding .panel-grid-cell {
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	}		
 /* Counter
 -------------------------------------------------------------- */
 	.roll-counter {
@@ -1824,6 +1835,9 @@ Panels
 -------------------------------------------------------------- */
 	.service {
 		margin-bottom: 30px;
+	}
+	.widget_sydney_services_type_b .service {
+		margin-bottom: 20px;
 	}
 	.service.col-md-4:nth-of-type(3n+1) {
 		clear: left;
@@ -2840,12 +2854,6 @@ Panels
 		.roll-counter .numb-count {
 			font-size: 24px;
 		}
-		.btn-menu {
-			display: block;
-		}
-		#mainnav {
-			display: none;
-		}
 		.masonry-layout .hentry {
 			width: 345px;
 		}
@@ -2907,7 +2915,13 @@ Panels
 		}
 		.panel-row-style.mob-pad-45 {
 			padding: 45px 0 !important;
-		}					
+		}
+		#mainnav {
+			display: none;
+		}		
+		.btn-menu {
+			display: block;
+		}							
 	}
 	@media only screen and (max-width: 780px) {	
 		.roll-client .client-item img {

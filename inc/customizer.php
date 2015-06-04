@@ -157,9 +157,41 @@ function sydney_customize_register( $wp_customize ) {
             'section' => 'sydney_slider',
             'type' => 'number',
             'description'   => __('Slider speed in miliseconds. Use 0 to disable [default: 4000]', 'sydney'),       
-            'priority' => 9
+            'priority' => 7
         )
-    );    
+    );
+    $wp_customize->add_setting(
+        'textslider_speed',
+        array(
+            'default' => __('4000','sydney'),
+            'sanitize_callback' => 'absint',
+        )
+    );
+    $wp_customize->add_control(
+        'textslider_speed',
+        array(
+            'label' => __( 'Text slider speed', 'sydney' ),
+            'section' => 'sydney_slider',
+            'type' => 'number',
+            'description'   => __('Text slider speed in miliseconds [default: 4000]', 'sydney'),       
+            'priority' => 8
+        )
+    );
+    $wp_customize->add_setting(
+        'textslider_slide',
+        array(
+            'sanitize_callback' => 'sydney_sanitize_checkbox',
+        )       
+    );
+    $wp_customize->add_control(
+        'textslider_slide',
+        array(
+            'type'      => 'checkbox',
+            'label'     => __('Stop the text slider?', 'sydney'),
+            'section'   => 'sydney_slider',
+            'priority'  => 9,
+        )
+    );
     //Image 1
     $wp_customize->add_setting('sydney_options[info]', array(
             'type'              => 'info_control',

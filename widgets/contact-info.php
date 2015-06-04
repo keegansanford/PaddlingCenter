@@ -78,11 +78,11 @@ class Sydney_Contact_Info extends WP_Widget {
 		ob_start();
 		extract($args);
 
-		$title 		= ( ! empty( $instance['title'] ) ) ? $instance['title'] : __( 'Contact info', 'sydney' );
+		$title 		= ( ! empty( $instance['title'] ) ) ? $instance['title'] : '';
 		$title 		= apply_filters( 'widget_title', $title, $instance, $this->id_base );
 		$address   	= isset( $instance['address'] ) ? esc_html( $instance['address'] ) : '';
 		$phone   	= isset( $instance['phone'] ) ? esc_html( $instance['phone'] ) : '';
-		$email   	= isset( $instance['email'] ) ? esc_html( $instance['email'] ) : '';
+		$email   	= isset( $instance['email'] ) ? antispambot(esc_html( $instance['email'] )) : '';
 
 		echo $before_widget;
 		

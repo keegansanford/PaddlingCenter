@@ -116,6 +116,12 @@ function sydney_row_styles($fields) {
 		'description' => __('Add your own class for this row', 'sydney'),
 		'priority' => 11,
 	);
+	$fields['column_padding'] = array(
+		'name'        => __('Columns padding', 'sydney'),
+		'type'        => 'checkbox',
+		'description' => __('Remove padding between columns for this row?', 'sydney'),
+		'priority'    => 12,
+	);	
 
 	return $fields;
 }
@@ -148,7 +154,10 @@ function sydney_row_styles_output($attr, $style) {
 	if( !empty( $style['mobile_padding'] ) ) {
 		$attr['class'][] = esc_attr($style['mobile_padding']);
 	}
-
+    if( !empty( $style['column_padding'] ) ) {
+       $attr['class'][] = 'no-col-padding';
+    }
+    
 	if(empty($attr['style'])) unset($attr['style']);
 	return $attr;
 }
